@@ -297,14 +297,17 @@ export default {
       }
     },
     updateCampsiteStatus(campsiteId, status) {
-      const campsite = this.campsites.find(cs => cs.id === campsiteId);
-      if (campsite) {
-        campsite.status = status;
-      }
+      const updateStatus = (campsite) => {
+        if (campsite.id === campsiteId) {
+          campsite.status = status;
+        }
+      };
+      this.campsites.forEach(updateStatus);
+      this.filteredCampsites.forEach(updateStatus);
     },
     async fetchReviews(campsiteId) {
       try {
-        console.log(`Fetching reviews for campsiteId: ${campsiteId}`); 
+        console.log(`Fetching reviews for campsiteId: ${campsiteId}`);
         const reviewsResponse = await axios.get(`https://localhost:5001/Review/`, {
           headers: {
             'Content-Type': 'application/json',
@@ -455,8 +458,6 @@ export default {
 
 .book-now-button.small {
   padding: 5px 10px; /* Smaller button size */
-  
-  
 }
 
 .book-now-button:hover {

@@ -199,7 +199,7 @@ export default {
             console.log('Location response:', locationResponse.data);
 
             if (locationResponse.data && locationResponse.data.length > 0) {
-              // Find the location with the maximum ID
+              
               const latestLocation = locationResponse.data.reduce((max, loc) => loc.id > max.id ? loc : max);
               this.campsite.locationId = latestLocation.id; // Set the location ID from the response
               console.log('Location ID set to:', this.campsite.locationId);
@@ -267,7 +267,7 @@ export default {
             withCredentials: true
           });
 
-          // Find the campsite with the highest ID (assuming it's the latest)
+          
           const latestCampsite = campsiteResponse.data.reduce((max, campsite) => campsite.id > max.id ? campsite : max, { id: -1 });
 
           if (latestCampsite.id !== -1) {

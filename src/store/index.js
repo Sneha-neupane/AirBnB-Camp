@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: null // This should be populated with user data upon login
+    user: null 
   },
   mutations: {
     setUser(state, user) {

@@ -161,7 +161,7 @@ nav {
 }
 
 .nav-logo {
-  height: 50px; /* Adjust as needed */
+  height: 50px; 
   width: 170px;
   border-radius: 10px;
 }

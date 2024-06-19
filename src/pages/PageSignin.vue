@@ -13,7 +13,7 @@
       <button type="submit" class="signin-button">Sign In</button>
     </form>
     <p v-if="message" class="message">{{ message }}</p>
-    <p class="register-text">Don't have an account? <button @click="$emit('navigate', 'register')" class="register-button">Register now</button></p>
+    <p class="register-text">Don't have an account? <button @click="$emit('navigate', 'Register')" class="register-button">Register now</button></p>
   </div>
 </template>
 
